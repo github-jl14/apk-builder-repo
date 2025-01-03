@@ -2,7 +2,7 @@ name: Extract ZIP and Commit Contents
 
 on:
   push:
-
+    
 jobs:
   extract-and-commit:
     runs-on: ubuntu-latest
@@ -18,13 +18,10 @@ jobs:
 
       - name: Unzip the file without overwriting existing files
         run: |
-          # Find all zip files and extract them
+          # Find all zip files and extract their contents directly into the root directory
           for zip_file in $(find . -name '*.zip'); do
-            dir_name=$(basename "$zip_file" .zip)
-            mkdir -p "$dir_name"  # Ensure the directory exists
-            
             # Unzip only the new or modified files (no overwrite)
-            unzip -n "$zip_file" -d "$dir_name"
+            unzip -n "$zip_file" -d .  # Extract directly into the root of the repo
           done
 
       - name: Check for changes and commit
