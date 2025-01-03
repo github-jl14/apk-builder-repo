@@ -2,8 +2,6 @@ name: Extract ZIP and Commit Contents
 
 on:
   push:
-    paths:
-      - '**/*.zip'  # Trigger the action for any .zip file in the repo
 
 jobs:
   extract-and-commit:
