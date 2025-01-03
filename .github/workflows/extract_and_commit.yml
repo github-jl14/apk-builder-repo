@@ -2,9 +2,6 @@ name: Extract ZIP and Commit Contents
 
 on:
   push:
-    paths:
-      - '**/*.zip'  # Trigger the action for any .zip file in the repo
-
 jobs:
   extract-and-commit:
     runs-on: ubuntu-latest
@@ -31,6 +28,8 @@ jobs:
         
       - name: Push changes
         run: |
+          git config --global user.email "alt444.001@gmail.com"
+          git config --global user.name "jay_"
           git push origin main  # Push to the main branch (adjust if necessary)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Automatically set by GitHub
