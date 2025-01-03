@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: AndroidManifest.xml
+SHA1-Digest: Xog0QdrGnCz2iE3x2nIDrSegkcg=
+
+Name: assets/fonts/Gabrielle.ttf
+SHA1-Digest: hvc6NPa0MKaS/LDRwZ7hsjzN75Y=
+
+Name: assets/xml/Gabrielle.xml
+SHA1-Digest: WbAKqeEZQmx1CeIDPhwClneqebc=
+
+Name: classes.dex
+SHA1-Digest: AQz/LuFP7A8YN3O+pWDIGm1zsaU=
+
+Name: res/drawable/icon.png
+SHA1-Digest: TzztuuerWmI4bfIdnx5/T9H+H9c=
+
+Name: res/layout/main.xml
+SHA1-Digest: PHyPNPw/8enZEKkXNftuGImmKsE=
+
+Name: resources.arsc
+SHA1-Digest: X4wxXvwOFLsovfVGrphD1vSKah4=
+

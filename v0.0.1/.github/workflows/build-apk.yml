@@ -1,0 +1,25 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          sudo apt update && sudo apt install -y apktool
+      - name: Build APK
+        run: |
+          apktool b /path/to/your/decompiled_apk -o /path/to/output/apk/output.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: apk
+          path: /path/to/output/apk/output.apk
