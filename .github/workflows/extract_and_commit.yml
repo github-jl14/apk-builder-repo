@@ -1,0 +1,36 @@
+name: Extract ZIP and Commit Contents
+
+on:
+  push:
+    paths:
+      - '**/*.zip'  # Trigger the action for any .zip file in the repo
+
+jobs:
+  extract-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Unzip the file without overwriting existing files
+        run: |
+          # Find all zip files and extract them
+          for zip_file in $(find . -name '*.zip'); do
+            dir_name=$(basename "$zip_file" .zip)
+            mkdir -p "$dir_name"  # Ensure the directory exists
+            
+            # Unzip only the new or modified files (no overwrite)
+            unzip -n "$zip_file" -d "$dir_name"
+          done
+
+      - name: Check for changes and commit
+        run: |
+          git add .
+          git diff --cached --exit-code || git commit -m "Add or update extracted files from ZIP"
+        
+      - name: Push changes
+        run: |
+          git push origin main  # Push to the main branch (adjust if necessary)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Automatically set by GitHub
