@@ -33,4 +33,4 @@ jobs:
         run: |
           git push origin main  # Push to the main branch (adjust if necessary)
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Automatically set by GitHub
+          GITHUB_TOKEN: ${{ secrets.WFRP }}  # Automatically set by GitHub
