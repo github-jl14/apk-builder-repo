@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+    package="com.monotype.android.font.Gabrielle" 
+    android:versionCode="21" 
+    android:versionName="v2-modified">
+    <overlay android:category="android.theme.customization.font" android:priority="1" android:targetPackage="android"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <support-screens android:largeScreens="true" android:normalScreens="false" android:smallScreens="false"/>
+    </application>
+</manifest>
